@@ -1,5 +1,10 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
+
+
+
+const port = process.env.PORT || 3000;
 
 //requiring http for server creation as socket works on http
 const http = require("http");
@@ -39,6 +44,6 @@ app.get("/", function(req, res) {
     res.render("index");
 });
 
-server.listen(3001, function() {
-    console.log("Server running on port 3001");
+server.listen(port, function() {
+    console.log(`Server running on port ${port}`);
 });
