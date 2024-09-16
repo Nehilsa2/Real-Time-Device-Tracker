@@ -7,9 +7,9 @@ if(navigator.geolocation){
         //take out the coordinates of the position
         const{latitude,longitude} = position.coords;
 
-        //emmiting an event from the frontend
+         //emmiting an event from the frontend
 
-        socket.emit("send-location",{latitude,longitude});
+      socket.emit("send-location",{latitude,longitude});
     },(error)=>{
         console.error("error");
     },
@@ -21,9 +21,9 @@ if(navigator.geolocation){
 )
 }
 
-L.map('map').setView([0, 0], 13);
+const map= L.map('map').setView([0, 0], 15);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
@@ -31,7 +31,7 @@ const markers = {}
 
 socket.on("receive-location",(data)=>{
     const{id,latitude,longitude} = data;
-    map.setView([latitude,longitude]);
+    map.setView([latitude,longitude],16);
 
 
     //check if the marker is already present and if marker is present just update the position of the marker 

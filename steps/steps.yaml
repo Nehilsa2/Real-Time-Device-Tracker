@@ -1,17 +1,17 @@
-check if browser supports the geoloaction
+1.check if browser supports the geoloaction
 
-st options for height accuracy , a 5 second timeout , and no caching.
+2.set options for height accuracy , a 5 second timeout , and no caching.
 
-use watchposition to track the user's location continuously.
+3.use watchposition to track the user's location continuously.
 
-Emit the latitude and longitude via socket with "send-location",log any errors to the console 
+4.Emit the latitude and longitude via socket with "send-location",log any errors to the console 
 
-Initialize a map centred at coordinates (0,0) with a zoom level of anything you want to set using leaflet.
+5.Initialize a map centred at coordinates (0,0) with a zoom level of anything you want to set using leaflet.
 
-Add openStreetmap tiles to map 
+6.Add openStreetmap tiles to map 
 
-create an empty object markers
+7.create an empty object markers
 
-when receiving the  location data  via the socket ,extract the id ,latitude ,longitude and center the mapon the view coordintes
+8.when receiving the  location data  via the socket ,extract the id ,latitude ,longitude and center the map on the view coordintes
 
-If a marker for the id exist update the location otherwise  create a new marker at the given coorindates and add it to the map.when a user disconnects ,remove their marker from the map and delete it from the markers
+9.If a marker for the id exist update the location otherwise  create a new marker at the given coorindates and add it to the map.when a user disconnects ,remove their marker from the map and delete it from the markers
