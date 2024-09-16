@@ -11,6 +11,10 @@
         "src": "/(.*)",
         "dest": "app.js"
       }
-    ]
+    ],
+    "static": {
+      "public": "public",
+      "views": "views"
+    }
   }
   
